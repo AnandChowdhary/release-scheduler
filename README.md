@@ -1,19 +1,14 @@
-# 🎬 GitHub Actions Starter
+# 🚂 Release Scheduler
 
-GitHub Actions starter for TypeScript with automated releases to `dist`, Semantic Release, and auto-PR merges.
+This is a GitHub Action to schedule dependency update releases. You need to use Dependabot to update your dependencies and Semantic Release to create releases, this action only adds a new commit if there have been dependency updates.
 
 [![Build CI](https://github.com/koj-co/release-scheduler/workflows/Build%20CI/badge.svg)](https://github.com/koj-co/release-scheduler/actions?query=workflow%3A%22Build+CI%22)
 [![Release CI](https://github.com/koj-co/release-scheduler/workflows/Release%20CI/badge.svg)](https://github.com/koj-co/release-scheduler/actions?query=workflow%3A%22Release+CI%22)
 [![Node CI](https://github.com/koj-co/release-scheduler/workflows/Node%20CI/badge.svg)](https://github.com/koj-co/release-scheduler/actions?query=workflow%3A%22Node+CI%22)
 
-## ⭐ Features
+## ⭐ Usage
 
-- Write source in TypeScript
-- Auto-publish compiled code to `dist/`
-- Semantic Release to GitHub and npm
-- Includes Actions Core and Octokit
-
-[**Create a repository using this template →**](https://github.com/koj-co/release-scheduler/generate)
+_Coming soon_
 
 ## 📄 License
 

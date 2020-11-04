@@ -3,7 +3,6 @@
 GitHub Actions starter for TypeScript with automated releases to `dist`, Semantic Release, and auto-PR merges.
 
 [![Build CI](https://github.com/koj-co/release-scheduler/workflows/Build%20CI/badge.svg)](https://github.com/koj-co/release-scheduler/actions?query=workflow%3A%22Build+CI%22)
-[![Test CI](https://github.com/koj-co/release-scheduler/workflows/Test%20CI/badge.svg)](https://github.com/koj-co/release-scheduler/actions?query=workflow%3A%22Test+CI%22)
 [![Release CI](https://github.com/koj-co/release-scheduler/workflows/Release%20CI/badge.svg)](https://github.com/koj-co/release-scheduler/actions?query=workflow%3A%22Release+CI%22)
 [![Node CI](https://github.com/koj-co/release-scheduler/workflows/Node%20CI/badge.svg)](https://github.com/koj-co/release-scheduler/actions?query=workflow%3A%22Node+CI%22)
 

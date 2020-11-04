@@ -21,7 +21,7 @@ export const run = async () => {
   });
   debug(`${commits.data.length} commits since last release`);
   const dependabotCommits = commits.data.filter((commit) =>
-    commit.author.login.includes("dependabot")
+    (((commit || {}).author || {}).login || "").includes("dependabot")
   );
   debug(`${dependabotCommits.length} Dependabot commits since last release`);
 

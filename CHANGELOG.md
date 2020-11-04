@@ -1,3 +1,9 @@
+## [v1.0.1](https://github.com/koj-co/release-scheduler/compare/v1.0.0...v1.0.1) (2020-11-04)
+
+### 🐛 Bug fixes
+
+- [`40d46d8`](https://github.com/koj-co/release-scheduler/commit/40d46d8)  Ensure commit.author.login exists
+
 ## v1.0.0 (2020-11-04)
 
 ### ✨ New features

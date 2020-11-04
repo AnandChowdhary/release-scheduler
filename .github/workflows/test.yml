@@ -5,6 +5,7 @@ on:
       - master
   schedule:
     - cron: "0 0 * * 1"
+  workflow_dispatch:
 jobs:
   releaseScheduler:
     runs-on: ubuntu-latest
@@ -14,3 +15,4 @@ jobs:
         uses: koj-co/release-scheduler@master
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
+          ACTIONS_STEP_DEBUG: ${{ secrets.ACTIONS_STEP_DEBUG }}

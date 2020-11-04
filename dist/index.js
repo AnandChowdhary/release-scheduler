@@ -1425,7 +1425,7 @@ exports.getUserAgent = getUserAgent;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.wait = exports.run = void 0;
+exports.run = void 0;
 const core_1 = __webpack_require__(470);
 const github_1 = __webpack_require__(469);
 const token = core_1.getInput("token") || process.env.GH_PAT || process.env.GITHUB_TOKEN;
@@ -1433,15 +1433,38 @@ exports.run = async () => {
     if (!token)
         throw new Error("GitHub token not found");
     const octokit = github_1.getOctokit(token);
-    const ms = core_1.getInput("milliseconds");
-    core_1.debug(`Waiting ${ms} milliseconds ...`);
-    core_1.debug(new Date().toTimeString());
-    await exports.wait(parseInt(ms, 10));
-    core_1.debug(new Date().toTimeString());
-    core_1.setOutput("time", new Date().toTimeString());
-};
-exports.wait = (milliseconds) => {
-    return new Promise((resolve) => setTimeout(() => resolve(), milliseconds));
+    const [owner, repo] = (process.env.GITHUB_REPOSITORY || "").split("/");
+    const releases = await octokit.repos.listReleases({ owner, repo, per_page: 1 });
+    const lastRelease = releases.data[0];
+    core_1.debug(`Last release was at ${lastRelease.created_at}`);
+    if (!lastRelease)
+        throw new Error("No releases found");
+    const commits = await octokit.repos.listCommits({
+        since: lastRelease.created_at,
+        per_page: 100,
+        owner,
+        repo,
+    });
+    core_1.debug(`${commits.data.length} commits since last release`);
+    const dependabotCommits = commits.data.filter((commit) => commit.author.login.includes("dependabot"));
+    core_1.debug(`${dependabotCommits.length} Dependabot commits since last release`);
+    if (dependabotCommits.length >=
+        (core_1.getInput("minimumCommits") ? parseInt(core_1.getInput("minimumCommits")) : 1)) {
+        core_1.debug("Triggering new release with commit");
+        const contents = await octokit.repos.getContent({ owner, repo, path: "package.json" });
+        await octokit.repos.createOrUpdateFileContents({
+            owner,
+            repo,
+            path: core_1.getInput("filePath") || "package.json",
+            content: contents.data.content,
+            sha: contents.data.sha,
+            message: core_1.getInput("commitMessage") || ":rocket: Release dependency updates",
+        });
+    }
+    else {
+        core_1.debug("Skipping new release");
+    }
+    core_1.debug("All done!");
 };
 exports.run()
     .then(() => { })

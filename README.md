@@ -8,7 +8,27 @@ This is a GitHub Action to schedule dependency update releases. You need to use 
 
 ## ⭐ Usage
 
-_Coming soon_
+You can choose to release every week or every month using GitHub Actions' scheduler:
+
+- `0 0 1 * *` - on the first of every month
+- `0 0 * * 1` - on Monday every week
+
+Then, add your workflow:
+
+```yaml
+name: Release Scheduler
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+jobs:
+  releaseScheduler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run release-scheduler
+        uses: koj-co/release-scheduler@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ## 📄 License
 

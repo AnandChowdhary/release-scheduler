@@ -1446,7 +1446,7 @@ exports.run = async () => {
         repo,
     });
     core_1.debug(`${commits.data.length} commits since last release`);
-    const dependabotCommits = commits.data.filter((commit) => commit.author.login.includes("dependabot"));
+    const dependabotCommits = commits.data.filter((commit) => (((commit || {}).author || {}).login || "").includes("dependabot"));
     core_1.debug(`${dependabotCommits.length} Dependabot commits since last release`);
     if (dependabotCommits.length >=
         (core_1.getInput("minimumCommits") ? parseInt(core_1.getInput("minimumCommits")) : 1)) {

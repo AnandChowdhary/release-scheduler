@@ -1458,7 +1458,7 @@ exports.run = async () => {
             path: core_1.getInput("filePath") || "package.json",
             content: contents.data.content,
             sha: contents.data.sha,
-            message: core_1.getInput("commitMessage") || ":rocket: Release dependency updates",
+            message: core_1.getInput("commitMessage") || ":package: Release dependency updates",
         });
     }
     else {

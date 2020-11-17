@@ -1,3 +1,13 @@
+## [v1.0.3](https://github.com/koj-co/release-scheduler/compare/v1.0.2...v1.0.3) (2020-11-17)
+
+### ♻️ Updates
+
+- [`eed6309`](https://github.com/koj-co/release-scheduler/commit/eed6309)  Use package instead of rocket gitmoji
+
+### ⬆️ Dependency updates
+
+- [`e8219bf`](https://github.com/koj-co/release-scheduler/commit/e8219bf)  Bump semantic-release from 17.2.2 to 17.2.3
+
 ## [v1.0.2](https://github.com/koj-co/release-scheduler/compare/v1.0.1...v1.0.2) (2020-11-17)
 
 ### ⬆️ Dependency updates

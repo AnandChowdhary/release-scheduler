@@ -16,7 +16,7 @@ inputs:
   commitMessage:
     required: false
     description: "Semantic release commit message"
-    default: ":rocket: Release dependency updates"
+    default: ":package: Release dependency updates"
 runs:
   using: "node12"
   main: "dist/index.js"

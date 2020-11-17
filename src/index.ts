@@ -37,7 +37,7 @@ export const run = async () => {
       path: getInput("filePath") || "package.json",
       content: contents.data.content,
       sha: contents.data.sha,
-      message: getInput("commitMessage") || ":rocket: Release dependency updates",
+      message: getInput("commitMessage") || ":package: Release dependency updates",
     });
   } else {
     debug("Skipping new release");

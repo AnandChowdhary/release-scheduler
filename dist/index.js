@@ -1452,6 +1452,12 @@ exports.run = async () => {
         (core_1.getInput("minimumCommits") ? parseInt(core_1.getInput("minimumCommits")) : 1)) {
         core_1.debug("Triggering new release with commit");
         const contents = await octokit.repos.getContent({ owner, repo, path: "package.json" });
+        const previousCommit = await octokit.repos.listCommits({ owner, repo, per_page: 1 });
+        if (previousCommit.data[0].commit.message ===
+            (core_1.getInput("commitMessage") || ":package: Release dependency updates")) {
+            core_1.debug("Skipping, already done!");
+            return;
+        }
         await octokit.repos.createOrUpdateFileContents({
             owner,
             repo,

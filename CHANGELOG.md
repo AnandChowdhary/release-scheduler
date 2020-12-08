@@ -1,3 +1,14 @@
+## [v1.0.4](https://github.com/koj-co/release-scheduler/compare/v1.0.3...v1.0.4) (2020-12-08)
+
+### 🐛 Bug fixes
+
+- [`a5e1ee3`](https://github.com/koj-co/release-scheduler/commit/a5e1ee3)  Skip duplicate commits
+
+### ⬆️ Dependency updates
+
+- [`5d3e008`](https://github.com/koj-co/release-scheduler/commit/5d3e008)  Bump vsoch/pull-request-action from 1.0.11 to 1.0.12
+- [`7bd6900`](https://github.com/koj-co/release-scheduler/commit/7bd6900)  Bump @koj/config from 1.2.8 to 1.2.9
+
 ## [v1.0.3](https://github.com/koj-co/release-scheduler/compare/v1.0.2...v1.0.3) (2020-11-17)
 
 ### ♻️ Updates

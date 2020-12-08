@@ -9,7 +9,7 @@ on:
 jobs:
   releaseScheduler:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, ':rocket:')"
+    if: "!contains(github.event.head_commit.message, ':package:')"
     steps:
       - name: Run release-scheduler
         uses: koj-co/release-scheduler@master

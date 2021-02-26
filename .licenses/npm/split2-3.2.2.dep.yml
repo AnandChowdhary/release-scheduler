@@ -1,6 +1,6 @@
 ---
 name: split2
-version: 2.2.0
+version: 3.2.2
 type: npm
 summary: split a Text Stream into a Line Stream, using Stream 3
 homepage: https://github.com/mcollina/split2#readme
@@ -8,7 +8,7 @@ license: isc
 licenses:
 - sources: LICENSE
   text: |
-    Copyright (c) 2014-2017, Matteo Collina <hello@matteocollina.com>
+    Copyright (c) 2014-2018, Matteo Collina <hello@matteocollina.com>
 
     Permission to use, copy, modify, and/or distribute this software for any
     purpose with or without fee is hereby granted, provided that the above
@@ -23,7 +23,7 @@ licenses:
     IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 - sources: README.md
   text: |-
-    Copyright (c) 2014-2017, Matteo Collina <hello@matteocollina.com>
+    Copyright (c) 2014-2018, Matteo Collina <hello@matteocollina.com>
 
     Permission to use, copy, modify, and/or distribute this software for any
     purpose with or without fee is hereby granted, provided that the above
